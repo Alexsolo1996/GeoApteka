@@ -46,7 +46,6 @@ public class BaseConfig {
         MethodForAptekaStartPage.sendDate(searchInputBoxXpath, "Аспирин");
         Thread.sleep(1000);
         MethodForAptekaStartPage.sendDate(searchInputBoxXpath, "'\ue007'");
-        Thread.sleep(3000);
     }
     @After
     public void tearDown() throws Exception {

@@ -31,7 +31,7 @@ public class MethodForAptekaStartPage extends BaseConfig
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(xpath)))).sendKeys(mess);
     }
 
-    public static void selectFromTheListForTime(String xpath, String xpath1){
+    public static void selectFromTheListForTimeDesc(String xpath, String xpath1){
         Select sel = new Select(initObject(xpath));
         sel.selectByVisibleText("Время в пути");
         Select sel1 = new Select(initObject(xpath1));
@@ -43,4 +43,35 @@ public class MethodForAptekaStartPage extends BaseConfig
          Assert.assertTrue("Количество аптек не совпадает после сортировки",before.equals(after));
     }
 
+    public static void selectFromTheListForPriceDesc(String xpath, String xpath1){
+        Select sel = new Select(initObject(xpath));
+        sel.selectByVisibleText("Цена");
+        Select sel1 = new Select(initObject(xpath1));
+        sel1.selectByVisibleText("убыванию");
+    }
+
+    public static void selectFromTheListForOstatokDesc(String xpath, String xpath1){
+        Select sel = new Select(initObject(xpath));
+        sel.selectByVisibleText("Остаток");
+        Select sel1 = new Select(initObject(xpath1));
+        sel1.selectByVisibleText("убыванию");
+    }
+    public static void selectFromTheListForOstatokAsc(String xpath, String xpath1){
+        Select sel = new Select(initObject(xpath));
+        sel.selectByVisibleText("Остаток");
+        Select sel1 = new Select(initObject(xpath1));
+        sel1.selectByVisibleText("возрастанию");
+    }
+    public static void selectFromTheListForPriceAsc(String xpath, String xpath1){
+        Select sel = new Select(initObject(xpath));
+        sel.selectByVisibleText("Цена");
+        Select sel1 = new Select(initObject(xpath1));
+        sel1.selectByVisibleText("возрастанию");
+    }
+    public static void selectFromTheListForTimeAsc(String xpath, String xpath1){
+        Select sel = new Select(initObject(xpath));
+        sel.selectByVisibleText("Время в пути");
+        Select sel1 = new Select(initObject(xpath1));
+        sel1.selectByVisibleText("возрастанию");
+    }
 }
