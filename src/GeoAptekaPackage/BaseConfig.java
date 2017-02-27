@@ -1,5 +1,7 @@
 package GeoAptekaPackage;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.runner.RunWith;
@@ -24,6 +26,7 @@ public class BaseConfig {
     public String url;
     static String searchBoxXpath = "//div[@id = \"s2id_search_select\"]";
     static String searchInputBoxXpath = ".//*[@id='select2-drop']/div/input";
+    static final Logger userLogger = LogManager.getLogger(Logger.class.getName());
 
     public BaseConfig(String url){
         this.url = url;

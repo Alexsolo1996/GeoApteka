@@ -3,6 +3,8 @@ package GeoAptekaPackage;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
+import java.io.IOException;
+
 /**
  * Created by user on 2/23/17.
  */
@@ -13,6 +15,7 @@ public class GeoAptekaStartPage extends BaseConfig
     String xpathForSelectDirection = ".//*[@id='order_way']";
     String countAptek = "//div[@class = \"summary\"]";
     String countAptek1 = "//div[@class = \"summary\"]";
+    String xpathShowWorkHours = "//div[@class = \"pharmacy_title_working has-list\"]";
 
     public GeoAptekaStartPage(String url) {
         super(url);
@@ -47,7 +50,7 @@ public class GeoAptekaStartPage extends BaseConfig
     }
 
     @Test
-    public void sortForPriceAscending() throws InterruptedException {
+    public void sortForPriceAscending() throws InterruptedException, IOException {
         MethodForAptekaStartPage.click(xpathForTabApteka);
         System.out.print(MethodForAptekaStartPage.initObject(countAptek).getText());
         MethodForAptekaStartPage.selectFromTheListForPriceAsc(xpathForSelectOption, xpathForSelectDirection);
@@ -56,7 +59,7 @@ public class GeoAptekaStartPage extends BaseConfig
     }
 
     @Test
-    public void sortForOstatokAscending() throws InterruptedException {
+    public void sortForOstatokAscending() throws InterruptedException, IOException {
         MethodForAptekaStartPage.click(xpathForTabApteka);
         System.out.print(MethodForAptekaStartPage.initObject(countAptek).getText());
         MethodForAptekaStartPage.selectFromTheListForOstatokAsc(xpathForSelectOption, xpathForSelectDirection);
@@ -65,7 +68,7 @@ public class GeoAptekaStartPage extends BaseConfig
     }
 
     @Test
-    public void sortForTimeAscending() throws InterruptedException {
+    public void sortForTimeAscending() throws InterruptedException, IOException {
         MethodForAptekaStartPage.click(xpathForTabApteka);
         System.out.print(MethodForAptekaStartPage.initObject(countAptek).getText());
         MethodForAptekaStartPage.selectFromTheListForTimeAsc(xpathForSelectOption, xpathForSelectDirection);
@@ -76,14 +79,13 @@ public class GeoAptekaStartPage extends BaseConfig
     @Test
     public void showWorkHours() throws InterruptedException {
         MethodForAptekaStartPage.click(xpathForTabApteka);
-        driver.findElement(By.xpath("//div[@class = \"pharmacy_title_working has-list\"]")).click();
+        MethodForAptekaStartPage.click(xpathShowWorkHours);
         Thread.sleep(1000);
     }
 
     @Test
-    public void receiveListOfAptek() throws InterruptedException {
+    public void receiveListOfAptek() throws InterruptedException, IOException {
         MethodForAptekaStartPage.click(xpathForTabApteka);
         Thread.sleep(1000);
     }
-
 }
